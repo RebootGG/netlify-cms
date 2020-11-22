@@ -26,10 +26,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.path,
-      component: blogPostTemplate,
-      context: {
-        path: node.frontmatter.path
-      }
+      component: blogPostTemplate
     })
   })
 }
